@@ -282,7 +282,7 @@ if (isset($_SESSION['refresh']) && $_SESSION['refresh'] == true) {
             <div class="product-img">
               <img class="img-fluid w-100" src="image/<?php echo $category_img ?>" alt="image" />
               <div class="p_icon">
-                <a href="individual_category.php?c_id=<?php echo $category_id; ?>">
+                <a href="category.php?c_id=<?php echo $category_id ?>">
                   <i class="ti-eye"></i>
                 </a>
 
