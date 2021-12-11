@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 $connection = mysqli_connect("localhost", "root", "", "ecommerce");
 session_start();
@@ -10,3 +11,10 @@ print_r($_SESSION);
 echo "</pre>";
 
 require_once("include/footer.php");
+=======
+<?php
+session_start();
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c

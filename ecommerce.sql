@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Dec 11, 2021 at 09:14 PM
+=======
+-- Generation Time: Dec 06, 2021 at 02:51 PM
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -41,8 +45,13 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_img`, `admin_name`, `admin_email`, `admin_password`, `login_date`) VALUES
+<<<<<<< HEAD
 (24, 'user1.png.png', 'reem bani ali', 'reem@gmail.com', 'Reem@123', '2021-12-07'),
 (26, 'Hazem.png', 'Hazem', 'Hazem9999@gmail.com', 'hazeM123@', '2021-12-11');
+=======
+(23, 'images.jpg', 'Ali obeidat', 'Aliobeidat03@gmail.com', 'asdasd123', '2021-12-05'),
+(24, 'user1.png.png', 'reem bani ali', 'reem@gmail.com', 'Reem@123', '2021-12-06');
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 -- --------------------------------------------------------
 
@@ -75,11 +84,16 @@ INSERT INTO `categories` (`category_id`, `category_name`, `category_img`) VALUES
 --
 
 CREATE TABLE `comments` (
+<<<<<<< HEAD
   `comment_id` int(3) NOT NULL,
+=======
+  `id` int(3) NOT NULL,
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
   `user_id` int(3) NOT NULL,
   `prodcut_id` int(3) NOT NULL,
   `comment_content` text NOT NULL,
   `comment_date` date NOT NULL,
+<<<<<<< HEAD
   `comment_status` varchar(255) NOT NULL DEFAULT 'public'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -92,6 +106,11 @@ INSERT INTO `comments` (`comment_id`, `user_id`, `prodcut_id`, `comment_content`
 (4, 5, 21, 'Best Website', '2021-12-07', 'Draft'),
 (5, 23, 21, 'Good', '2021-12-09', 'public');
 
+=======
+  `comment_status` varchar(255) NOT NULL DEFAULT 'draft'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 -- --------------------------------------------------------
 
 --
@@ -107,14 +126,19 @@ CREATE TABLE `orders` (
   `product_quantity` int(3) NOT NULL,
   `city_name` varchar(255) NOT NULL,
   `street_name` varchar(255) NOT NULL,
+<<<<<<< HEAD
   `phone_number` int(11) NOT NULL,
   `order_notes` text NOT NULL
+=======
+  `phone_number` int(11) NOT NULL
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `orders`
 --
 
+<<<<<<< HEAD
 INSERT INTO `orders` (`order_id`, `user_id`, `order_status`, `order_total_amount`, `order_date`, `product_quantity`, `city_name`, `street_name`, `phone_number`, `order_notes`) VALUES
 (5, 4, 'Order Placed', 9, '2021-12-06', 1, 'Amman', 'dsafdsa', 789501453, ''),
 (6, 4, 'Order Placed', 9, '2021-12-06', 1, 'Amman', 'asfsa', 789501453, ''),
@@ -126,6 +150,11 @@ INSERT INTO `orders` (`order_id`, `user_id`, `order_status`, `order_total_amount
 (26, 5, 'Order Placed', 9, '2021-12-08', 1, 'Amman', 'asfas', 789501453, ''),
 (27, 5, 'Order Placed', 9, '2021-12-08', 1, 'yeeeeees', 'rrrrrrrrrrrrrr', 789501453, 'GOOOOOOOOOOOD'),
 (29, 23, 'Order Placed', 504, '2021-12-09', 6, 'Amman', 'asdd', 789501453, 'Good');
+=======
+INSERT INTO `orders` (`order_id`, `user_id`, `order_status`, `order_total_amount`, `order_date`, `product_quantity`, `city_name`, `street_name`, `phone_number`) VALUES
+(3, 5, 'Canceled', 100, '2021-12-01', 10, 'irbid', ' asdasd ', 799161600),
+(4, 6, 'Order Placed', 100, '2021-12-05', 1, 'اربد', 'al rafeed', 799161600);
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 -- --------------------------------------------------------
 
@@ -202,6 +231,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_img`, `user_name`, `user_email`, `user_password`, `login_date`) VALUES
+<<<<<<< HEAD
 (4, 'Screenshot (13).png', 'Ali obeidat', 'Ali@gmail.com', 'asdasd123', '2021-12-07'),
 (5, '', 'reem bani ', 'reem@gmail.com', 'aseq', '2021-12-07'),
 (6, 'IMG-61ad34248b7aa-119988967_1021874854913083_1067678444140277952_n.jpg', 'ali hussein obeidat', 'ali.hus.obeidat@gmail.com', 'Alihobeidat@98', '2021-12-05'),
@@ -217,6 +247,11 @@ INSERT INTO `users` (`user_id`, `user_img`, `user_name`, `user_email`, `user_pas
 (21, '', 'Salameh', 'Salameh@gmail.com', 'hazeM123@', '0000-00-00'),
 (22, '', 'Malek', 'Malek@gmail.com', 'hazeM123@', '0000-00-00'),
 (23, '', 'Hazem', 'hazem.rafaty0910@gmail.com', 'hazeM123@', '0000-00-00');
+=======
+(4, 'Screenshot (13).png', 'Ali obeidat', 'Ali@gmail.com', 'asdasd123', '2021-12-01'),
+(5, 'Screenshot 2021-11-24 115557.jpg', 'reem bani ', 'reem@gmail.com', 'aseq', '2021-11-02'),
+(6, 'IMG-61ad34248b7aa-119988967_1021874854913083_1067678444140277952_n.jpg', 'ali hussein obeidat', 'ali.hus.obeidat@gmail.com', 'Alihobeidat@98', '2021-12-05');
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 -- --------------------------------------------------------
 
@@ -235,6 +270,7 @@ CREATE TABLE `users_cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+<<<<<<< HEAD
 -- Dumping data for table `users_cart`
 --
 
@@ -256,6 +292,8 @@ INSERT INTO `users_cart` (`user_cart_id`, `user_id`, `product_id`, `order_id`, `
 (36, 23, 24, 29, 3, 27, '34');
 
 --
+=======
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 -- Indexes for dumped tables
 --
 
@@ -276,7 +314,11 @@ ALTER TABLE `categories`
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
+<<<<<<< HEAD
   ADD PRIMARY KEY (`comment_id`),
+=======
+  ADD PRIMARY KEY (`id`),
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
   ADD KEY `users_id` (`user_id`),
   ADD KEY `products_id` (`prodcut_id`);
 
@@ -318,7 +360,11 @@ ALTER TABLE `users_cart`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
+<<<<<<< HEAD
   MODIFY `admin_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+=======
+  MODIFY `admin_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -330,13 +376,21 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
+<<<<<<< HEAD
   MODIFY `comment_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+=======
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
+<<<<<<< HEAD
   MODIFY `order_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+=======
+  MODIFY `order_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -348,13 +402,21 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
+<<<<<<< HEAD
   MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+=======
+  MODIFY `user_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 --
 -- AUTO_INCREMENT for table `users_cart`
 --
 ALTER TABLE `users_cart`
+<<<<<<< HEAD
   MODIFY `user_cart_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+=======
+  MODIFY `user_cart_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+>>>>>>> 790351ed47e41fbe1536fc4200ea0111f78d0c9c
 
 --
 -- Constraints for dumped tables
