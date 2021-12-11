@@ -1,24 +1,10 @@
 <?php
-$connection = mysqli_connect("localhost", "root", "", "ecommerce");
 // For Logout
 if (isset($_GET['status']) && $_GET['status'] == 'logout') {
   unset($_SESSION['userLogin']);
   unset($_SESSION['adminLogin']);
   unset($_SESSION['shopping_cart']);
   header("Location: index.php");
-}
-
-// For Comments
-if (isset($_GET['comment'])) {
-  if (isset($_SESSION['userLogin'])) {
-    $sql = "INSERT INTO comments (user_id,prodcut_id,comment_content,comment_date) 
-    VALUES ('{$_SESSION['userLogin']}','{$_GET['id']}','{$_GET['message']}', NOW())";
-    mysqli_query($connection, $sql);
-    $id = $_GET['id'];
-    header("location: single-product.php?id={$id}");
-  } else {
-    echo "<script>alert('You must be logged in')</script>";
-  }
 }
 
 // For Add To Cart
@@ -28,7 +14,7 @@ if (isset($_GET["action"]) && $_GET["action"] == "add_to_cart") {
   $query         = "SELECT * FROM products WHERE product_id = {$_GET['id']}";
   $result        = mysqli_query($connection, $query);
   $row           = mysqli_fetch_assoc($result);
-  if ($row['product_price_on_sale'] == 0) {
+  if ($row['sale_status'] == "off") {
     $thePrice = $row['product_price'];
   } else {
     $thePrice = $row['product_price_on_sale'];
@@ -98,8 +84,9 @@ if (isset($_GET["action"]) && $_GET["action"] == "add_to_cart") {
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="it's a clothes ecommerce website">
   <link rel="icon" href="img/favicon.png" type="image/png" />
-  <title>Eiser ecommerce</title>
+  <title>Style_Loft | Ecommerce</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.css" />
   <link rel="stylesheet" href="vendors/linericon/style.css" />
@@ -117,8 +104,6 @@ if (isset($_GET["action"]) && $_GET["action"] == "add_to_cart") {
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/slider.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" rel="stylesheet" />
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
   <style>
     i.ti {
       cursor: pointer;
@@ -153,6 +138,36 @@ if (isset($_GET["action"]) && $_GET["action"] == "add_to_cart") {
 
     .cont {
       display: flex;
+    }
+
+    .banner_area {
+      min-height: 0px;
+    }
+
+    .banner_area .banner_inner {
+      min-height: 0px;
+      padding: 15px
+    }
+
+    .product_image_area {
+      padding-top: 20px;
+    }
+
+    .section_gap {
+      padding-top: 20px;
+    }
+
+    .product_top_bar {
+      background-color: transparent;
+
+    }
+
+    .footer-area.section_gap {
+      padding: 60px 0px;
+    }
+
+    .section_gap_bottom_custom {
+      padding-bottom: 10px;
     }
 
     @media (max-width:500px) {
@@ -204,7 +219,7 @@ if (isset($_GET["action"]) && $_GET["action"] == "add_to_cart") {
                         $category_name = $row['category_name'];
                       ?>
                         <li class=" nav-item">
-                          <a class="nav-link" href="individual_category.php?c_id=<?php echo $category_id; ?>"><?php echo $category_name ?></a>
+                          <a class="nav-link" href="category.php?c_id=<?php echo $category_id; ?>"><?php echo $category_name ?></a>
                         </li>
                       <?php } ?>
 
