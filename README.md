@@ -1,6 +1,6 @@
 # Project4-StyleLoft
 
-#### It is a E-Commerce Webiste
+### It is a E-Commerce Webiste
 
 ## Wireframe For Public Website:
 https://www.figma.com/file/fSn2TYW0GWriCMTiQazTPG/Wireframing-in-Figma?node-id=108%3A288
